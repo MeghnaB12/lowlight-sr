@@ -23,21 +23,19 @@ The model consists of two distinct sub-networks trained jointly:
 
   * **MRPNet (Denoiser)**: A compact Encoder-Decoder network.
 
-  * **Encoder**: Convolutional layers with ReLU to extract features and suppress noise.
-
-  * **Decoder**: Transposed convolutions to reconstruct the denoised spatial representation.
+    * **Encoder**: Convolutional layers with ReLU to extract features and suppress noise.
+    * **Decoder**: Transposed convolutions to reconstruct the denoised spatial representation.
 
   * **Generator (Enhancer)**: A deeper network inspired by Super-Resolution architectures.
 
-  * **Residual Blocks**: Conv2d + BatchNorm + ReLU blocks with skip connections (x+residual) to prevent gradient vanishing.
-
-  * **PixelShuffle Upsampling**: Increases resolution/feature clarity effectively without the checkerboard artifacts often caused by standard deconvolution.
+    * **Residual Blocks**: Conv2d + BatchNorm + ReLU blocks with skip connections (x+residual) to prevent gradient vanishing.
+    * **PixelShuffle Upsampling**: Increases resolution/feature clarity effectively without the checkerboard artifacts often caused by standard deconvolution.
 
 ### 2. Training Strategy
 
   * Loss Function: Mean Squared Error (MSE) to minimize the pixel-wise difference between the enhanced output and the ground truth (GT) image.
 
-  * Optimizer: Adam with a learning rate of 1e-4.
+  * Optimizer: Adam with a learning rate of $10^{-4}$
 
   * Checkpointing: Automatically saves the best model weights (best_model.pth) whenever the validation loss improves.
 

@@ -69,13 +69,9 @@ pip install torch torchvision numpy pandas pillow kaggle
 
 ### 2. Dataset
 
-This model was trained on a low-light enhancement dataset containing paired images:
+This model was trained on a low-light image enhancement dataset as part of a university challenge. The data consists of pairs of noisy, low-light images and their corresponding clean, ground-truth (GT) images. Due to privacy and access restrictions, the dataset is not publicly available and is not included in this repository.
 
-Input: Noisy, low-light images.
-
-Target: Clean, ground-truth (GT) images.
-
-The dataset is expected to be mounted at: /kaggle/input/dlp-jan-2025-nppe-3/archive/
+Therefore, the script cannot be run out-of-the-box without downloading the specific competition data separately and placing it in the correct directory structure (e.g., train/train for input and train/gt for target images).
 
 ### 3. Notebook Review
 
@@ -83,7 +79,7 @@ The provided code serves as an end-to-end pipeline:
 
 * **Data Loading**: Initializes datasets and loaders for Train, Validation, and Test splits.
 
-* **Model Build**: Instantiates the CombinedModel and moves it to the GPU (cuda:0).
+* **Model Build**: Instantiates the CombinedModel and moves it to the GPU.
 
 * **Training**: Runs the training loop with mixed precision and saves the best checkpoints.
 

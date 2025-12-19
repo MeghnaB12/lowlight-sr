@@ -13,7 +13,6 @@ The pipeline is engineered for high-fidelity image restoration within a Kaggle e
 
   * Robust Data Handling: Features custom Dataset classes for paired training (noisy/clean) and efficient data loading with DataLoader.
 
-  * Automated Submission: Includes a built-in script to process test images, flatten predictions into the required CSV format, and automatically submit results     to the Kaggle competition via API.
 
 ## 📈 Methodology
 The core of this solution is a sequential refinement process where the image is first denoised and then enhanced for perceptual quality.
@@ -50,7 +49,6 @@ The model consists of two distinct sub-networks trained jointly:
 
   * Post-Processing: Converts the enhanced images into grayscale, flattens them, and samples pixels (stride 8) to match the specific CSV format required by the     competition.
 
-  * Kaggle API Integration: Automatically authenticates and submits the generated submissionfinal.csv to the competition leaderboard.
 
 ## 🛠️ Tech Stack
 

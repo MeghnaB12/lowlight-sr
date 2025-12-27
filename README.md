@@ -59,7 +59,7 @@ The model consists of two distinct sub-networks trained jointly:
 
 ### 1. Dependencies
 
-This script is designed to run in a Kaggle Notebook environment. Ensure the dataset path matches the competition directory structure.
+This script is designed to run in a Kaggle Notebook environment.
 
 ```
 pip install torch torchvision numpy pandas pillow kaggle
